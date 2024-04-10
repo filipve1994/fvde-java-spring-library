@@ -1,0 +1,6 @@
+server:
+  port: 9658
+
+spring:
+  application:
+    name: example-spring-boot-starter-test
