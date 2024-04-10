@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>io.filipvde</groupId>
+        <artifactId>java-common-lib-parent</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <groupId>io.filipvde.wrapperallinone</groupId>
+    <artifactId>wrapper-all-in-one</artifactId>
+    <description>all dependencies in 1 jar for when needed</description>
+
+    <properties>
+
+
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>io.filipvde.core</groupId>
+            <artifactId>core</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.filipvde.utils</groupId>
+            <artifactId>utils</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.filipvde.database</groupId>
+            <artifactId>database</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.filipvde.logging</groupId>
+            <artifactId>logging</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.filipvde.client</groupId>
+            <artifactId>client</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.filipvde.api</groupId>
+            <artifactId>api</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.filipvde.testing</groupId>
+            <artifactId>testing</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.filipvde.domain</groupId>
+            <artifactId>domain</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
+
+<!--        <dependency>-->
+<!--            <groupId>io.filipvde.entities</groupId>-->
+<!--            <artifactId>entities</artifactId>-->
+<!--            <version>${project.parent.version}</version>-->
+<!--        </dependency>-->
+
+    </dependencies>
+
+    <!--
+The <distributionManagement> section in the Maven pom.xml file specifies
+where project artifacts should be deployed (published).
+-->
+    <distributionManagement>
+        <!-- this is to publish to the same repo as the package -->
+        <!--    <repository>-->
+        <!--      <id>github</id>-->
+        <!--      <name>Github</name>-->
+        <!--      <url>https://maven.pkg.github.com/filipve1994/tutorial-lib</url>-->
+        <!--    </repository>-->
+        <!--    <snapshotRepository>-->
+        <!--      <id>github</id>-->
+        <!--      <url>https://maven.pkg.github.com/filipve1994/tutorial-lib</url>-->
+        <!--    </snapshotRepository>-->
+
+        <!-- this creates 1 repo with all projects pushed to -->
+        <repository>
+            <id>github</id>
+            <name>GitHub Packages</name>
+            <url>https://maven.pkg.github.com/filipve1994/private-maven-packages-repo</url>
+        </repository>
+        <snapshotRepository>
+            <id>github</id>
+            <url>https://maven.pkg.github.com/filipve1994/private-maven-packages-repo</url>
+        </snapshotRepository>
+
+    </distributionManagement>
+
+</project>
