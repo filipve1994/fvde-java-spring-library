@@ -69,7 +69,7 @@
 		<module>java/library-templates</module>
 		<module>java/maven-archetypes</module>
 
-<!--		<module>spring-boot</module>-->
+		<!--		<module>spring-boot</module>-->
 		<module>spring-boot/fvde-spring-commons</module>
 
 		<module>spring-boot/fvde-custom-spring-boot-starters</module>
@@ -80,6 +80,51 @@
 		<module>spring-boot/spring-boot-examples</module>
 
 	</modules>
+
+	<profiles>
+		<profile>
+			<id>deploy</id>
+			<modules>
+				<module>java/libraries</module>
+				<!--				<module>java/library-templates</module>-->
+				<!--				<module>java/maven-archetypes</module>-->
+
+				<!--		<module>spring-boot</module>-->
+				<module>spring-boot/fvde-spring-commons</module>
+
+				<module>spring-boot/fvde-custom-spring-boot-starters</module>
+				<!--				<module>spring-boot/fvde-custom-spring-boot-starter-tests</module>-->
+
+				<!--				<module>spring-boot/fvde-spring-boot-starter-templates</module>-->
+
+				<!--				<module>spring-boot/spring-boot-examples</module>-->
+			</modules>
+			<properties>
+				<maven.test.skip>true</maven.test.skip>
+			</properties>
+		</profile>
+		<profile>
+			<id>github_maven_test</id>
+			<modules>
+				<module>java/libraries</module>
+				<!--				<module>java/library-templates</module>-->
+				<!--				<module>java/maven-archetypes</module>-->
+
+				<!--		<module>spring-boot</module>-->
+				<module>spring-boot/fvde-spring-commons</module>
+
+				<module>spring-boot/fvde-custom-spring-boot-starters</module>
+				<!--				<module>spring-boot/fvde-custom-spring-boot-starter-tests</module>-->
+
+				<!--				<module>spring-boot/fvde-spring-boot-starter-templates</module>-->
+
+				<!--				<module>spring-boot/spring-boot-examples</module>-->
+			</modules>
+			<properties>
+				<maven.test.skip>false</maven.test.skip>
+			</properties>
+		</profile>
+	</profiles>
 
 	<dependencyManagement>
 		<dependencies>

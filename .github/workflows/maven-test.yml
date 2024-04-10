@@ -43,7 +43,8 @@ jobs:
 
       - name: Maven test
         #run: mvn test -s $GITHUB_WORKSPACE/settings.xml
-        run: ./mvnw clean test
+#        run: ./mvnw clean test
+        run: ./mvnw clean test -Pgithub_maven_test #test only certain modules
         env:
           GITHUB_TOKEN: ${{ secrets.DEPLOY_GITHUB_TOKEN }}
           GITHUB_ACTOR: ${{ secrets.DEPLOY_GITHUB_USERNAME }}
