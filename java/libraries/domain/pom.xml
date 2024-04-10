@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>io.filipvde</groupId>
+        <artifactId>java-common-lib-parent</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <groupId>io.filipvde.domain</groupId>
+    <artifactId>domain</artifactId>
+    <description>domain stuff like enums, models, dtos, etc. that can be used in multiple places without special libs or
+        so
+    </description>
+
+    <properties>
+
+
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <!-- swagger -->
+
+        <!-- https://mvnrepository.com/artifact/io.swagger.core.v3/swagger-annotations-jakarta -->
+        <dependency>
+            <groupId>io.swagger.core.v3</groupId>
+            <artifactId>swagger-annotations-jakarta</artifactId>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-annotations -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+        </dependency>
+    </dependencies>
+
+
+    <!--
+The <distributionManagement> section in the Maven pom.xml file specifies
+where project artifacts should be deployed (published).
+-->
+    <distributionManagement>
+        <!-- this is to publish to the same repo as the package -->
+        <!--    <repository>-->
+        <!--      <id>github</id>-->
+        <!--      <name>Github</name>-->
+        <!--      <url>https://maven.pkg.github.com/filipve1994/tutorial-lib</url>-->
+        <!--    </repository>-->
+        <!--    <snapshotRepository>-->
+        <!--      <id>github</id>-->
+        <!--      <url>https://maven.pkg.github.com/filipve1994/tutorial-lib</url>-->
+        <!--    </snapshotRepository>-->
+
+        <!-- this creates 1 repo with all projects pushed to -->
+        <repository>
+            <id>github</id>
+            <name>GitHub Packages</name>
+            <url>https://maven.pkg.github.com/filipve1994/private-maven-packages-repo</url>
+        </repository>
+        <snapshotRepository>
+            <id>github</id>
+            <url>https://maven.pkg.github.com/filipve1994/private-maven-packages-repo</url>
+        </snapshotRepository>
+
+    </distributionManagement>
+
+</project>
