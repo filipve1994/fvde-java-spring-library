@@ -1,0 +1,13 @@
+server:
+  address: localhost
+  port: 0
+
+spring:
+  application:
+    name: artifactidtoreplace
+  docker:
+    compose:
+      enabled: false
+      file: ./compose.yaml
+  liquibase:
+    enabled: false
