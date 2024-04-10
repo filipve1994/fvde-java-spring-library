@@ -1,4 +1,4 @@
-package io.filipvde.utils.datetimes;
+package io.filipvde.customspringbootstarter.utils.datetimes;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

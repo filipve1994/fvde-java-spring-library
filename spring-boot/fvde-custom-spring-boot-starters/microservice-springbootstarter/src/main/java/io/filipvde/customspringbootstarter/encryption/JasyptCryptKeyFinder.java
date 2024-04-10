@@ -1,9 +1,9 @@
 package io.filipvde.customspringbootstarter.encryption;
 
+import io.filipvde.customspringbootstarter.exceptions.ConfigFailedException;
 import jakarta.annotation.Nonnull;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
-import org.fve.customstarters.model.exceptions.ConfigFailedException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

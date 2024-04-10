@@ -1,4 +1,4 @@
-package io.filipvde.utils.datetimes;
+package io.filipvde.customspringbootstarter.utils.datetimes;
 
 import lombok.Getter;
 import lombok.Setter;

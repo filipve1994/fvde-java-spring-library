@@ -1,4 +1,4 @@
-package io.filipvde.customspringbootstarter.model.global;
+package io.filipvde.customspringbootstarter.security.model;
 
 import io.filipvde.customspringbootstarter.exceptions.PreConditionNotMetException;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -7,25 +7,24 @@ import lombok.Getter;
 
 @Getter
 @Schema(enumAsRef = true)
-public enum Language {
-    EN("EN"),
-    FR("FR"),
-    NL("NL");
+public enum UserRole {
+    USER("USER"),
+    ADMIN("ADMIN");
 
     private final String value;
 
-    Language(String value) {
+    UserRole(String value) {
         this.value = value;
     }
 
-    public static Language getEnum(@Nullable final String value) {
-        for (final Language enumCode : Language.values()) {
+    public static UserRole getEnum(@Nullable final String value) {
+        for (final UserRole enumCode : UserRole.values()) {
             if (enumCode.getValue().equalsIgnoreCase(value)) {
                 return enumCode;
 
             }
         }
 
-        throw new PreConditionNotMetException("No Language found for argument: " + value);
+        throw new PreConditionNotMetException("No UserRole found for argument: " + value);
     }
 }
