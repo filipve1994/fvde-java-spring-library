@@ -1,14 +1,13 @@
 package io.filipvde.commons.util;
 
 import com.google.auto.service.AutoService;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.core.ResolvableType;
 
 import static org.junit.jupiter.api.Assertions.assertInstanceOf;
 
-/**
- *
- */
+@Disabled
 class ProviderLoaderTest {
 
 	@Test

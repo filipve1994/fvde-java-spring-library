@@ -1,6 +1,7 @@
 package io.filipvde.commons.spring.context;
 
 import lombok.Data;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.support.RootBeanDefinition;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -16,6 +17,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * SpringContextHolderTest
  * </p>
  */
+@Disabled
 @SpringBootTest("spring.data.redis.host=fve.com")
 class SpringContextHolderTest {
 

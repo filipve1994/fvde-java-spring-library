@@ -1,1 +1,2 @@
-io.filipvde.customspringbootstarter.AppStarterAutoConfiguration
+io.filipvde.customspringbootstarter.webspringdocstarter.WebSpringdocAppStarterAutoConfiguration
+io.filipvde.customspringbootstarter.webspringdocstarter.logging.LoggingAutoConfiguration

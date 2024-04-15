@@ -24,6 +24,7 @@ import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
 import org.springframework.web.method.support.HandlerMethodReturnValueHandler;
 import org.springframework.web.reactive.config.WebFluxConfigurer;
@@ -37,6 +38,7 @@ import java.util.List;
  * </p>
  */
 @AutoConfiguration
+@ComponentScan("io.filipvde.customspringbootstarter.qrcode")
 @ConditionalOnClass(name = "com.google.zxing.common.BitMatrix")
 public class QRCodeAutoConfiguration {
 

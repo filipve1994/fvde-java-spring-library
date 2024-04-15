@@ -37,6 +37,7 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>21</java.version>
 		<maven.compiler.source>${java.version}</maven.compiler.source>
 		<maven.compiler.target>${java.version}</maven.compiler.target>
@@ -44,22 +45,70 @@
 		<maven.build.timestamp.format>yyyyMMdd-HHmmss</maven.build.timestamp.format>
 
 		<!-- plugins and libs -->
-
+		<!-- filip java libs version -->
+		<filip-java-libs.version>${project.version}</filip-java-libs.version>
+		<!-- filip starters version-->
+		<filip-java-starters.version>${project.version}</filip-java-starters.version>
+		<filip-java-starters.version>${project.version}</filip-java-starters.version>
 
 		<!-- global for every submodule etc. -->
 		<maven-clean-plugin.version>3.2.0</maven-clean-plugin.version>
-		<maven-compiler-plugin.version>3.12.1</maven-compiler-plugin.version>
+		<maven-compiler-plugin.version>3.13.0</maven-compiler-plugin.version>
 		<maven-jar-plugin.version>3.3.0</maven-jar-plugin.version>
+		<maven-jar-use-timestamp-insteadof-snapshot-as-prefixforjar>false
+		</maven-jar-use-timestamp-insteadof-snapshot-as-prefixforjar>
 		<maven-resources-plugin.version>3.3.0</maven-resources-plugin.version>
 		<maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
+		<maven-failsafe-plugin.version>3.2.5</maven-failsafe-plugin.version>
+
 		<spring-boot.version>3.2.4</spring-boot.version>
+		<spring.version>6.1.6</spring.version>
+		<spring.cloud.version>2023.0.1</spring.cloud.version>
+		<spring-modulith.version>1.1.3</spring-modulith.version>
+
+		<!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-engine -->
 		<junit-jupiter.version>5.10.2</junit-jupiter.version>
+		<!-- https://mvnrepository.com/artifact/org.junit.platform/junit-platform-launcher -->
+		<junit-platform-launcher.version>1.10.2</junit-platform-launcher.version>
+		<!-- https://mvnrepository.com/artifact/org.assertj/assertj-core -->
+		<assertj-core.version>3.25.3</assertj-core.version>
+
 		<native-build-tools-plugin.version>0.9.17</native-build-tools-plugin.version>
 		<logback.version>1.4.4</logback.version>
-		<slf4j.version>2.0.3</slf4j.version>
+		<slf4j.version>2.0.12</slf4j.version>
 
 		<guava.version>33.1.0-jre</guava.version>
 		<jsoup.version>1.17.2</jsoup.version>
+		<swagger-annotations.version>2.2.21</swagger-annotations.version>
+
+		<!-- plugins and libs -->
+		<springdoc.version>2.5.0</springdoc.version>
+		<google-guava.version>33.1.0-jre</google-guava.version>
+		<jjwt.version>0.12.5</jjwt.version>
+		<lombok.version>1.18.32</lombok.version>
+		<jasypt.version>3.0.5</jasypt.version>
+		<findbugs.version>3.0.2</findbugs.version>
+		<apache-commons-lang3.version>3.14.0</apache-commons-lang3.version>
+		<apache-commons-collections4.version>4.4</apache-commons-collections4.version>
+		<apache-commons-text.version>1.11.0</apache-commons-text.version>
+		<apache-commons-validator.version>1.8.0</apache-commons-validator.version>
+
+		<h2.version>2.2.224</h2.version>
+		<snakeyaml.version>2.1</snakeyaml.version>
+		<jacoco.maven.plugin.version>0.8.12</jacoco.maven.plugin.version>
+		<springdoc.version>2.5.0</springdoc.version>
+		<openapitools-generator.version>7.4.0</openapitools-generator.version>
+		<jsoup.version>1.17.2</jsoup.version>
+		<junit.pioneer.version>2.2.0</junit.pioneer.version>
+
+		<jakarta-servlet.version>6.0.0</jakarta-servlet.version>
+		<commons-io.version>2.16.1</commons-io.version>
+
+		<!-- tools -->
+		<net.sf.jasperreports.version>6.21.0</net.sf.jasperreports.version>
+		<poi.version>5.2.4</poi.version>
+		<org.mapstruct.version>1.5.5.Final</org.mapstruct.version>
+		<lombok-mapstruct-binding.version>0.2.0</lombok-mapstruct-binding.version>
 
 	</properties>
 
@@ -129,6 +178,15 @@
 	<dependencyManagement>
 		<dependencies>
 
+			<!-- swagger -->
+
+			<!-- https://mvnrepository.com/artifact/io.swagger.core.v3/swagger-annotations-jakarta -->
+			<dependency>
+				<groupId>io.swagger.core.v3</groupId>
+				<artifactId>swagger-annotations-jakarta</artifactId>
+				<version>${swagger-annotations.version}</version>
+			</dependency>
+
 			<dependency>
 				<groupId>org.jsoup</groupId>
 				<artifactId>jsoup</artifactId>
@@ -143,6 +201,7 @@
 				<version>${guava.version}</version>
 			</dependency>
 
+			<!-- https://mvnrepository.com/artifact/org.junit/junit-bom -->
 			<dependency>
 				<groupId>org.junit</groupId>
 				<artifactId>junit-bom</artifactId>
@@ -158,78 +217,288 @@
 				<scope>import</scope>
 			</dependency>
 
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>${spring.cloud.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework.modulith</groupId>
+				<artifactId>spring-modulith-bom</artifactId>
+				<version>${spring-modulith.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+
 			<!-- my own -->
 
 			<dependency>
 				<groupId>io.filipvde.core</groupId>
 				<artifactId>core</artifactId>
-				<version>${project.parent.version}</version>
+				<version>${filip-java-libs.version}</version>
 			</dependency>
 
 			<dependency>
 				<groupId>io.filipvde.utils</groupId>
 				<artifactId>utils</artifactId>
-				<version>${project.parent.version}</version>
+				<version>${filip-java-libs.version}</version>
 			</dependency>
 
 			<dependency>
 				<groupId>io.filipvde.database</groupId>
 				<artifactId>database</artifactId>
-				<version>${project.parent.version}</version>
+				<version>${filip-java-libs.version}</version>
 			</dependency>
 
 			<dependency>
 				<groupId>io.filipvde.logging</groupId>
 				<artifactId>logging</artifactId>
-				<version>${project.parent.version}</version>
+				<version>${filip-java-libs.version}</version>
 			</dependency>
 
 			<dependency>
 				<groupId>io.filipvde.client</groupId>
 				<artifactId>client</artifactId>
-				<version>${project.parent.version}</version>
+				<version>${filip-java-libs.version}</version>
 			</dependency>
 
 			<dependency>
 				<groupId>io.filipvde.api</groupId>
 				<artifactId>api</artifactId>
-				<version>${project.parent.version}</version>
+				<version>${filip-java-libs.version}</version>
 			</dependency>
 
 			<dependency>
 				<groupId>io.filipvde.testing</groupId>
 				<artifactId>testing</artifactId>
-				<version>${project.parent.version}</version>
+				<version>${filip-java-libs.version}</version>
 			</dependency>
 
 			<dependency>
 				<groupId>io.filipvde.domain</groupId>
 				<artifactId>domain</artifactId>
-				<version>${project.parent.version}</version>
+				<version>${filip-java-libs.version}</version>
 			</dependency>
 
 			<dependency>
 				<groupId>io.filipvde.entities</groupId>
 				<artifactId>entities</artifactId>
-				<version>${project.parent.version}</version>
+				<version>${filip-java-libs.version}</version>
 			</dependency>
 
 			<dependency>
 				<groupId>io.filipvde.wrapperallinone</groupId>
 				<artifactId>wrapper-all-in-one</artifactId>
-				<version>${project.parent.version}</version>
+				<version>${filip-java-libs.version}</version>
 			</dependency>
 
 			<dependency>
 				<groupId>io.filipvde</groupId>
 				<artifactId>fvde-spring-commons</artifactId>
-				<version>${project.parent.version}</version>
+				<version>${filip-java-starters.version}</version>
 			</dependency>
 
 			<dependency>
 				<groupId>io.filipvde.customspringbootstarter</groupId>
 				<artifactId>qrcode-spring-boot-starter</artifactId>
-				<version>${project.parent.version}</version>
+				<version>${filip-java-starters.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>io.filipvde.customspringbootstarter</groupId>
+				<artifactId>web-springdoc-spring-boot-starter</artifactId>
+				<version>${filip-java-starters.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>io.filipvde.customspringbootstarter</groupId>
+				<artifactId>utils-spring-boot-starter</artifactId>
+				<version>${filip-java-starters.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>io.filipvde.customspringbootstarter</groupId>
+				<artifactId>microservice-spring-boot-starter</artifactId>
+				<version>${filip-java-starters.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>io.filipvde.customspringbootstarter</groupId>
+				<artifactId>jpa-spring-boot-starter</artifactId>
+				<version>${filip-java-starters.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>io.filipvde.customspringbootstarter</groupId>
+				<artifactId>startup-spring-boot-starter</artifactId>
+				<version>${filip-java-starters.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>io.filipvde.customspringbootstarter</groupId>
+				<artifactId>security-spring-boot-starter</artifactId>
+				<version>${filip-java-starters.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-web</artifactId>
+				<version>${spring.version}</version>
+				<scope>provided</scope>
+				<!--<optional>true</optional>-->
+			</dependency>
+			<dependency>
+				<groupId>jakarta.servlet</groupId>
+				<artifactId>jakarta.servlet-api</artifactId>
+				<version>${jakarta-servlet.version}</version>
+				<scope>provided</scope>
+				<!--<optional>true</optional>-->
+			</dependency>
+			<dependency>
+				<groupId>commons-io</groupId>
+				<artifactId>commons-io</artifactId>
+				<version>${commons-io.version}</version>
+				<!--<optional>true</optional>-->
+			</dependency>
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-api</artifactId>
+				<version>${slf4j.version}</version>
+				<!--<optional>true</optional>-->
+			</dependency>
+
+
+			<dependency>
+				<groupId>com.google.code.findbugs</groupId>
+				<artifactId>jsr305</artifactId>
+				<version>${findbugs.version}</version>
+				<optional>true</optional>
+			</dependency>
+
+			<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson/jackson-bom -->
+			<!-- https://github.com/FasterXML/jackson-bom -->
+			<dependency>
+				<groupId>com.fasterxml.jackson</groupId>
+				<artifactId>jackson-bom</artifactId>
+				<version>${jackson-bom.version}</version>
+				<scope>import</scope>
+				<type>pom</type>
+			</dependency>
+
+			<dependency>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-lang3</artifactId>
+				<version>${apache-commons-lang3.version}</version>
+				<optional>true</optional>
+			</dependency>
+
+			<dependency>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-collections4</artifactId>
+				<version>${apache-commons-collections4.version}</version>
+				<optional>true</optional>
+			</dependency>
+
+			<dependency>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-text</artifactId>
+				<version>${apache-commons-text.version}</version>
+				<optional>true</optional>
+			</dependency>
+
+			<dependency>
+				<groupId>org.openapitools</groupId>
+				<artifactId>openapi-generator</artifactId>
+				<version>${openapitools-generator.version}</version>
+				<optional>true</optional>
+			</dependency>
+
+			<dependency>
+				<groupId>io.jsonwebtoken</groupId>
+				<artifactId>jjwt-api</artifactId>
+				<version>${jjwt.version}</version>
+				<optional>true</optional>
+			</dependency>
+
+			<dependency>
+				<groupId>io.jsonwebtoken</groupId>
+				<artifactId>jjwt-impl</artifactId>
+				<version>${jjwt.version}</version>
+				<optional>true</optional>
+			</dependency>
+
+			<dependency>
+				<groupId>io.jsonwebtoken</groupId>
+				<artifactId>jjwt-jackson</artifactId>
+				<version>${jjwt.version}</version>
+				<optional>true</optional>
+			</dependency>
+
+			<dependency>
+				<groupId>org.projectlombok</groupId>
+				<artifactId>lombok</artifactId>
+				<version>${lombok.version}</version>
+				<optional>true</optional>
+			</dependency>
+
+			<dependency>
+				<groupId>org.junit.platform</groupId>
+				<artifactId>junit-platform-launcher</artifactId>
+				<version>${junit-platform-launcher.version}</version>
+				<scope>test</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.yaml</groupId>
+				<artifactId>snakeyaml</artifactId>
+				<version>${snakeyaml.version}</version>
+				<optional>true</optional>
+			</dependency>
+
+			<dependency>
+				<groupId>commons-beanutils</groupId>
+				<artifactId>commons-beanutils</artifactId>
+				<version>1.9.4</version>
+				<optional>true</optional>
+			</dependency>
+
+			<dependency>
+				<groupId>org.passay</groupId>
+				<artifactId>passay</artifactId>
+				<version>1.6.4</version>
+				<optional>true</optional>
+			</dependency>
+
+			<!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-params -->
+			<!--        JUnit Jupiter extension for running parameterized tests.-->
+			<dependency>
+				<groupId>org.junit.jupiter</groupId>
+				<artifactId>junit-jupiter-params</artifactId>
+				<version>${junit-jupiter.version}</version>
+				<scope>test</scope>
+			</dependency>
+
+			<!-- https://mvnrepository.com/artifact/org.junit-pioneer/junit-pioneer -->
+			<!--        JUnit 5 Extension Pack -->
+			<!--        https://junit-pioneer.org/docs/ -->
+			<dependency>
+				<groupId>org.junit-pioneer</groupId>
+				<artifactId>junit-pioneer</artifactId>
+				<version>${junit.pioneer.version}</version>
+				<scope>test</scope>
+			</dependency>
+
+
+			<!-- Test dependencies -->
+
+			<dependency>
+				<groupId>org.assertj</groupId>
+				<artifactId>assertj-core</artifactId>
+				<version>${assertj-core.version}</version>
+				<scope>test</scope>
 			</dependency>
 
 		</dependencies>

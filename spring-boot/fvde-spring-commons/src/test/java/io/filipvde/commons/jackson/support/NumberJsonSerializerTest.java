@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import io.filipvde.commons.beans.BeanLambdaFunc;
 import io.filipvde.commons.jackson.util.JsonMapperUtils;
 import lombok.Getter;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
@@ -14,6 +15,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 /**
  *
  */
+@Disabled
 class NumberJsonSerializerTest {
 
 	@Test

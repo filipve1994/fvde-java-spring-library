@@ -108,10 +108,12 @@
 
 		<!-- my own -->
 
+		<module>utils-spring-boot-starter</module>
+		<module>startup-spring-boot-starter</module>
+		<module>error-handling-custom-spring-boot-starter</module>
 
 		<module>web-springdoc-spring-boot-starter</module>
 		<module>microservice-springbootstarter</module>
-		<module>utils-spring-boot-starter</module>
 		<module>security-spring-boot-starter</module>
 		<module>jpa-spring-boot-starter</module>
 		<module>personal-thymeleaf-spring-boot-starter</module>
@@ -148,6 +150,18 @@
 			<dependency>
 				<groupId>org.springdoc</groupId>
 				<artifactId>springdoc-openapi-starter-webmvc-api</artifactId>
+				<version>${springdoc.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springdoc</groupId>
+				<artifactId>springdoc-openapi-starter-webflux-ui</artifactId>
+				<version>${springdoc.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springdoc</groupId>
+				<artifactId>springdoc-openapi-starter-webflux-api</artifactId>
 				<version>${springdoc.version}</version>
 			</dependency>
 

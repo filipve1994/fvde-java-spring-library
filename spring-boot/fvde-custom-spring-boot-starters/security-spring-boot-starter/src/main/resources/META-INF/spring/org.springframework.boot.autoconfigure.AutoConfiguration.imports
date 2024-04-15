@@ -1,2 +1,1 @@
-io.filipvde.customspringbootstarter.AppStarterAutoConfiguration
-io.filipvde.customspringbootstarter.SecurityConfig
+io.filipvde.customspringbootstarter.securitystarter.SecurityAppStarterAutoConfiguration

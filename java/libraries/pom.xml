@@ -51,6 +51,7 @@
 		<module>testing</module>
 		<module>domain</module>
 		<module>entities</module>
+		<module>jwt</module>
 
 
 		<!-- this one always last -->

@@ -1,0 +1,61 @@
+- @EnableWebSecurity
+- @EnableMethodSecurity
+- TimeZone.setDefault(
+- @CreationTimestamp => done
+- @UpdateTimestamp => done
+- AuditModel
+- @EntityListeners(AuditingEntityListener.class)
+- Auditable => done
+- @CreatedDate => done
+- @LastModifiedDate => done
+- @OneToMany
+- @ManyToMany
+- @OneToOne
+- @ManyToOne
+- @Enumerated
+- @JoinTable
+- @MappedSuperclass
+- extends RuntimeException
+- import io.swagger.v3.oas.models.OpenAPI;
+- @Configuration
+- @Component
+- @Service
+- @EnableJpaAuditing
+- AuditorAware => done
+- @Profile
+- public LocalValidatorFactoryBean
+- public ObjectMapper
+- AttributeConverter
+- @SecurityScheme
+- @OpenAPIDefinition => done
+- BaseEntity
+- ConstraintValidator
+- @Aspect
+- import org.aspectj
+- public @interface
+- @EnableAspectJAutoProxy
+- import org.springframework.context.MessageSource;
+- MessageSource
+- LocaleResolver
+- @Bean
+- @RestControllerAdvice
+- CommandLineRunner
+- AuthenticationEntryPoint
+- OncePerRequestFilter
+- @ConfigurationProperties
+- @EnableConfigurationProperties
+- GroupedOpenApi
+- @EventListener
+- extends ApplicationEvent
+- @ConditionalOnProperty
+- DefaultErrorAttributes
+- Abstract
+- AppConfig
+- SpringResourceTemplateResolver
+- MessageSourceService
+- Specification<
+- enum
+- Random
+- cors
+- util
+- 

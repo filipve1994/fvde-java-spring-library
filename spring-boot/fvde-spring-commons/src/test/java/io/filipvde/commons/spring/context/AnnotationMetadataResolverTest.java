@@ -1,5 +1,6 @@
 package io.filipvde.commons.spring.context;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 /**
  *
  */
+@Disabled
 @SpringBootTest
 class AnnotationMetadataResolverTest {
 

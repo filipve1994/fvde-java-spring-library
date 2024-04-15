@@ -29,6 +29,8 @@ import io.filipvde.customspringbootstarter.qrcode.PicType;
 import io.filipvde.customspringbootstarter.qrcode.QRCodeGenerator;
 import io.filipvde.customspringbootstarter.qrcode.exception.QRCodeException;
 import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.awt.image.BufferedImage;
 
@@ -36,8 +38,10 @@ import java.awt.image.BufferedImage;
  * The type Google qrcode generator.
  *
  */
-@Slf4j
 public class GoogleQRCodeGenerator extends AbstractQRCodeGenerator implements QRCodeGenerator {
+
+	private static final Logger log = LoggerFactory.getLogger(GoogleQRCodeGenerator.class);
+
 
 	private final JacksonOps jacksonOps;
 

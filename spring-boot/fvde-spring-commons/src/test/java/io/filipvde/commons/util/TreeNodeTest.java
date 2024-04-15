@@ -1,11 +1,12 @@
 package io.filipvde.commons.util;
 
 import io.filipvde.commons.jackson.util.JsonMapperUtils;
-import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
@@ -16,9 +17,10 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
  * TreeNodeTest
  * </p>
  */
-@Slf4j
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class TreeNodeTest {
+
+	private static final Logger log = LoggerFactory.getLogger(TreeNodeTest.class);
 
 	static TreeNode<Long, String> root;
 

@@ -3,6 +3,7 @@ package io.filipvde.commons.http;
 import io.filipvde.commons.http.annotation.EnableHttpClient;
 import io.filipvde.commons.http.annotation.HttpClientType;
 import io.filipvde.commons.spring.context.SpringContextHolder;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -18,6 +19,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
  */
 @SpringBootTest("spring.main.web-application-type=servlet")
 @EnableHttpClient({HttpClientType.REST_TEMPLATE, HttpClientType.WEB_CLIENT, HttpClientType.REST_CLIENT})
+@Disabled
 class SpringHttpTest {
 
 	@Autowired

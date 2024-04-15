@@ -19,6 +19,8 @@ package io.filipvde.commons.spring.context;
 //import io.filipvde.auto.service.annotation.SpringAutoService;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.BeanFactoryAware;
@@ -50,11 +52,12 @@ import java.util.Map;
  *
 
  */
-@Slf4j
 //@SpringAutoService
 @Order(Ordered.HIGHEST_PRECEDENCE)
 @Component(SpringContextHolder.BEAN_NAME)
 public class SpringContextHolder implements BeanFactoryAware, ApplicationContextAware, DisposableBean {
+
+	private static final Logger log = LoggerFactory.getLogger(SpringContextHolder.class);
 
 	/**
 	 * SpringContextHolder bean name

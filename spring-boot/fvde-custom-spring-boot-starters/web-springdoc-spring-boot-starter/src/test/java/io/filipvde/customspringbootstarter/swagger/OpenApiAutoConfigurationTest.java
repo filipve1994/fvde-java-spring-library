@@ -1,5 +1,6 @@
 package io.filipvde.customspringbootstarter.swagger;
 
+import io.filipvde.customspringbootstarter.webspringdocstarter.swagger.OpenApiAutoConfiguration;
 import io.swagger.v3.oas.models.OpenAPI;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.autoconfigure.AutoConfigurations;

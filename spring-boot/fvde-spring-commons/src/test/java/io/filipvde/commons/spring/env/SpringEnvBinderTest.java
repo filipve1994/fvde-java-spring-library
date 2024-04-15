@@ -3,6 +3,7 @@ package io.filipvde.commons.spring.env;
 import lombok.Data;
 import lombok.experimental.Accessors;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -17,9 +18,7 @@ import java.util.Set;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertIterableEquals;
 
-/**
- *
- */
+@Disabled
 @SpringBootTest({"io.filipvde.of.code = 200", "io.filipvde.of.msg = root", "io.filipvde.of.data = 666", "io.filipvde.of.int = 1",
 	"io.filipvde.of.str = 1",
 

@@ -7,7 +7,8 @@
         <groupId>io.filipvde</groupId>
         <artifactId>java-common-lib-parent</artifactId>
         <version>1.0-SNAPSHOT</version>
-    </parent>
+		<relativePath>../pom.xml</relativePath>
+	</parent>
 
     <groupId>io.filipvde.testing</groupId>
     <artifactId>testing</artifactId>

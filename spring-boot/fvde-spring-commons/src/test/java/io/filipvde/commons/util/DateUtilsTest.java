@@ -1,7 +1,8 @@
 package io.filipvde.commons.util;
 
-import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -15,8 +16,9 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
  * DateUtilsTest
  * </p>
  */
-@Slf4j
 class DateUtilsTest {
+
+	private static final Logger log = LoggerFactory.getLogger(DateUtilsTest.class);
 
 	@Test
 	void timestampTest() {

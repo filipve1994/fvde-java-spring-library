@@ -22,6 +22,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.util.CollectionUtils;
 
 import java.util.ArrayList;
@@ -36,13 +38,14 @@ import java.util.List;
  * @param <T> 树形节点数据相关type
 
  */
-@Slf4j
 @Data
 @Accessors(chain = true)
 @NoArgsConstructor
 @AllArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class TreeNode<I, T> {
+
+	private static final Logger log = LoggerFactory.getLogger(TreeNode.class);
 
 	private I id;
 

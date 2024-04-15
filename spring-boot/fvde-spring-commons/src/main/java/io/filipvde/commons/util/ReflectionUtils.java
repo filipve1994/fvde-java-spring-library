@@ -17,7 +17,8 @@
 package io.filipvde.commons.util;
 
 import lombok.experimental.UtilityClass;
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.beans.PropertyDescriptor;
 import java.lang.reflect.Field;
@@ -34,17 +35,18 @@ import java.util.stream.Collectors;
  * <p>
  * reflectionRelatedTools
  * </p>
- *
  */
-@Slf4j
 @UtilityClass
 public class ReflectionUtils extends org.springframework.util.ReflectionUtils {
 
+	private static final Logger log = LoggerFactory.getLogger(ReflectionUtils.class);
+
 	/**
 	 * setAccessibleToTrueForTheField,andSetAValue
-	 * @param field field
+	 *
+	 * @param field     field
 	 * @param parameter parameter
-	 * @param value value
+	 * @param value     value
 	 */
 	public void setFieldAndAccessible(Field field, Object parameter, Object value) {
 		field.setAccessible(true);
@@ -53,6 +55,7 @@ public class ReflectionUtils extends org.springframework.util.ReflectionUtils {
 
 	/**
 	 * getAllGetMethodsOfAClass
+	 *
 	 * @param targetClass class
 	 * @return read methods
 	 */
@@ -65,16 +68,16 @@ public class ReflectionUtils extends org.springframework.util.ReflectionUtils {
 
 	/**
 	 * getTheFieldOfAClass getMethod
+	 *
 	 * @param targetClass class
-	 * @param field field
+	 * @param field       field
 	 * @return read method
 	 */
 	public Method getReadMethod(Class<?> targetClass, Field field) {
 		try {
 			PropertyDescriptor descriptor = new PropertyDescriptor(field.getName(), targetClass);
 			return descriptor.getReadMethod();
-		}
-		catch (Exception e) {
+		} catch (Exception e) {
 			log.error("getFieldGetMethodFailed message: {}", e.getMessage(), e);
 			return null;
 		}
@@ -82,6 +85,7 @@ public class ReflectionUtils extends org.springframework.util.ReflectionUtils {
 
 	/**
 	 * getAllSetMethodsOfAClass
+	 *
 	 * @param targetClass target class
 	 * @return write methods
 	 */
@@ -94,16 +98,16 @@ public class ReflectionUtils extends org.springframework.util.ReflectionUtils {
 
 	/**
 	 * getTheFieldOfAClass setMethod
+	 *
 	 * @param targetClass class
-	 * @param field field
+	 * @param field       field
 	 * @return method
 	 */
 	public Method getWriteMethod(Class<?> targetClass, Field field) {
 		try {
 			PropertyDescriptor descriptor = new PropertyDescriptor(field.getName(), targetClass);
 			return descriptor.getWriteMethod();
-		}
-		catch (Exception e) {
+		} catch (Exception e) {
 			log.error("failedToGetFieldSetMethod message: {}", e.getMessage(), e);
 			return null;
 		}
@@ -111,6 +115,7 @@ public class ReflectionUtils extends org.springframework.util.ReflectionUtils {
 
 	/**
 	 * getAllFieldsOfAClass,includesAllParentClasses
+	 *
 	 * @param targetClass class
 	 * @return fields
 	 */
@@ -127,7 +132,8 @@ public class ReflectionUtils extends org.springframework.util.ReflectionUtils {
 
 	/**
 	 * getTheValueOfAPrivateProperty
-	 * @param field field
+	 *
+	 * @param field  field
 	 * @param target target
 	 * @return declared field value
 	 */
